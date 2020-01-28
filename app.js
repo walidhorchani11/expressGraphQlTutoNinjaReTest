@@ -3,6 +3,9 @@ const express = require('express');
 //call handler of requete grapql  
 const graphqlHTTP = require('express-graphql');
 
+//import schema to use it in handler expressGraphQl
+const schema = require('./schema/schema.js');
+
 
 const app = express();
 
@@ -16,7 +19,8 @@ app.use((req, res, next) => {
 
 //say to express to listen to graphql request to trait them
 app.use('/graphql', graphqlHTTP({
-  
+  schema,
+  graphiql: true
 }));
 
 //2eme middlware
