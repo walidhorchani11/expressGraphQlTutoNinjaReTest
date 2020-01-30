@@ -1,46 +1,10 @@
 
 const graphql = require('graphql');
 
-const _ = require('lodash');
-
 const {GraphQLObjectType, GraphQLSchema, GraphQLID, GraphQLString, GraphQLNonNull, GraphQLInt, GraphQLList} = graphql;
 
 const Author = require('../models/author');
 const Book = require('../models/book');
-
-//dummy data 
-var authors = [
-  {
-    id: '1',
-    name: "walid",
-    age: 15
-  },
-  {
-    id: '2',
-    name: "Khawla",
-    age: 22
-  }
-];
-
-var books = [
-  {
-    id: '1',
-    title: "hallowyyyn",
-    authorId: '1'
-  },
-  {
-    id: '2',
-    title:"ciptadine",
-    authorId: '2'
-  },
-  {
-    id: '3',
-    title: "kiratine",
-    authorId: '1'
-  }
-]
-
-
 
 //create object Book for schema graphQl
 const BookType = new GraphQLObjectType({
@@ -74,7 +38,6 @@ const AuthorType = new GraphQLObjectType({
     }
   })
 });
-
 
 
 //create root query
@@ -131,7 +94,6 @@ const RootQuery = new GraphQLObjectType({
 });
 
 
-
 //create mutation 
 const RootMutation = new GraphQLObjectType({
 
@@ -183,4 +145,3 @@ module.exports = new GraphQLSchema({
   query: RootQuery,
   mutation: RootMutation,
 })
-

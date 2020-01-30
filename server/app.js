@@ -4,7 +4,7 @@ const express = require('express');
 const graphqlHTTP = require('express-graphql');
 
 //import schema to use it in handler expressGraphQl
-const schema = require('./schema/schema.js');
+const schema = require('../server/schema/schema');
 
 const mongoos = require('mongoose');
 //connect to mlab
