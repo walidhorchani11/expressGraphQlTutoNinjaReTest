@@ -6,4 +6,4 @@ const bookSchema = new mongoos.Schema({
 });
 
 
-module.exports = mongoos.model('BookWiwi', bookSchema);
+module.exports = mongoos.model('Book', bookSchema);
