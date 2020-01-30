@@ -6,6 +6,12 @@ const graphqlHTTP = require('express-graphql');
 //import schema to use it in handler expressGraphQl
 const schema = require('./schema/schema.js');
 
+const mongoos = require('mongoose');
+//connect to mlab
+
+mongoos.connect('mongodb+srv://walidhorchani:ran08742242@cluster0-mqctn.mongodb.net/test?retryWrites=true&w=majority');
+
+mongoos.connection.once('open', () => {console.log('connexion to mlab etablie avec success')} );
 
 const app = express();
 
