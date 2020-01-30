@@ -6,6 +6,10 @@ const graphqlHTTP = require('express-graphql');
 //import schema to use it in handler expressGraphQl
 const schema = require('../server/schema/schema');
 
+//allow cors
+const cors = require('cors');
+
+
 const mongoos = require('mongoose');
 //connect to mlab
 
@@ -14,6 +18,10 @@ mongoos.connect('mongodb+srv://walidhorchani:ran08742242@cluster0-mqctn.mongodb.
 mongoos.connection.once('open', () => {console.log('connexion to mlab etablie avec success')} );
 
 const app = express();
+
+
+//allow cors 
+app.use(cors());
 
 //une application express est fonadamentalement une serie de fonctions appelé middleware, chaque element de middleware recoit les objets request et response , peut les lire, les analyser et les manipuler, il peut recevoir aussi la methode next pour passer au middleware suivant 
 
