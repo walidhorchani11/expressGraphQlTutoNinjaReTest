@@ -1,5 +1,6 @@
 import React from 'react';
 import BookList from './components/BookList';
+import AddBook from './components/AddBook';
 
 //apollo client setup 
 import ApolloClient from 'apollo-boost';
@@ -20,6 +21,9 @@ function App() {
       <div id="main">
         <h1>walid horchani tuto graphQL and Appollo</h1>
         <BookList />
+
+        <hr />
+        <AddBook />
       </div>
     </ApolloProvider>
   );
