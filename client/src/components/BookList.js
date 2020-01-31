@@ -1,21 +1,9 @@
 import React, { Component } from 'react';
-
-import { gql } from 'apollo-boost';
 import { graphql } from 'react-apollo';
-
-//construire notre requete comme dans graphiql
-const getBooksQuery = gql`
-  {
-    books{
-      title
-      id
-    }
-  }
-`;
+import {getBooksQuery} from '../queries/queries';
 
 
 class BookList extends Component {
-
 
   displayBooks (){
     var data = this.props.data;
@@ -37,9 +25,7 @@ class BookList extends Component {
   }
 
   render() {
-
     console.log(this.props);
-
     return (
       <div>
         <h2>Book List Component</h2>
@@ -49,8 +35,6 @@ class BookList extends Component {
 
       </div>
     )
-
-
   }
 
 }
