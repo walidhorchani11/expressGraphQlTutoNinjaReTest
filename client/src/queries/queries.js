@@ -10,6 +10,15 @@ const getAuthorsQuery = gql`
 }
 `;
 
+const addBookMutation = gql`
+mutation($title: String!, $authorId: ID!){
+  addBook(title: $title, authorId: $authorId){
+    title
+    id
+  }
+}
+`;
+
 
 //construire notre requete comme dans graphiql
 const getBooksQuery = gql`
@@ -21,4 +30,4 @@ const getBooksQuery = gql`
   }
 `;
 
-export {getBooksQuery, getAuthorsQuery};
+export {getBooksQuery, getAuthorsQuery, addBookMutation};
