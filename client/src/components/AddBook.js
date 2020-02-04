@@ -44,13 +44,10 @@ class AddBook extends Component{
       refetchQueries: [{query: getBooksQuery}]
     }
     );
-        console.log(this.state);
+       
   }
   
   render(){
-
-    console.log(this.props);
-
     return (
       <form id="add_book" onSubmit={this.handleSubmit}>
         <div>
@@ -66,9 +63,10 @@ class AddBook extends Component{
         <div>
           {/* for name of author*/}
           <label>Author</label>
-          <select onChange={(e) => this.setState({
-            idAuthor: e.target.value
-          })}>
+          <select onChange={(e) => {
+            this.setState({
+            authorId: e.target.value
+          })}}>
             <option>select author</option>
             {this.displayAuthors()}
           </select>
